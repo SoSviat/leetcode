@@ -1,6 +1,12 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        s = "".join(c.lower() for c in s if c.isalnum())
+        result = ""
+
+        for c in s:
+            if c.isalnum():
+                result += c.lower()
+
+        s = result
         
         i = 0
         lenght_s = len(s)
