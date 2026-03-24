@@ -10,7 +10,6 @@ class Solution:
             short_word = word1
 
         for i in range(len(long_word)):
-            print(long_word[i])
             if(i  < len(word1)):
                 res += word1[i]
             
