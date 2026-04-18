@@ -19,7 +19,8 @@ class Solution:
 
         return self.fib(n, dict_)
         
-
+        #O(n)
+        #O(n)
 
 
         #if(n == 0 or n == 1):
