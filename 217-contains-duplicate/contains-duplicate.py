@@ -8,3 +8,6 @@ class Solution:
                 return True
             res.add(i)
         return False
+
+#O(n)
+#0(1)
