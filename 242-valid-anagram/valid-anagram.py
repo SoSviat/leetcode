@@ -1,23 +1,24 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-
-        container = {}
-        lenght = len(s)
-
-        if(lenght != len(t)):
+        
+        if len(s) != len(t):
             return False
-        
-        for i in range(lenght):
-            if s[i] in container:
-                container[s[i]] += 1
-            else:
-                container[s[i]] = 1
 
-        for i in range(lenght):
-            if t[i] in container and container[t[i]]>0:
-                container[t[i]] -= 1
+        dic_ = {}
+        
+        for i in s:
+            if i in dic_:
+                dic_[i] = dic_[i] + 1
             else:
+                dic_[i] = 1
+
+        for i in t:
+            if i not in dic_:
                 return False
-        
-        return True
 
+            dic_[i] -= 1
+
+            if dic_[i] == 0:
+                del dic_[i]
+            
+        return True
