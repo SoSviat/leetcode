@@ -22,3 +22,6 @@ class Solution:
                 del dic_[i]
             
         return True
+
+        #0(n)
+        #0(1)
