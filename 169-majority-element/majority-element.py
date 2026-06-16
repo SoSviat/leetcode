@@ -6,16 +6,12 @@ class Solution:
         for num in nums:
             if count == 0:
                 candidate = num
-                
+
             if candidate != num:
                 count -= 1
             elif candidate == num:
                 count += 1 
             
-
-        
-
-        print(candidate)
         return candidate
         
         
