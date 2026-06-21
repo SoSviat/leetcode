@@ -17,3 +17,5 @@ class Solution:
 
             fast += 1
             
+        #O(n)
+        #O(1)
