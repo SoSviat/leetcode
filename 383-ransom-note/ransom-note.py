@@ -1,9 +1,6 @@
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        
-        print(ransomNote)
-        print(magazine)
-
+    
         colection = {}
 
         for i in range(len(magazine)):
@@ -19,7 +16,8 @@ class Solution:
                 colection[ransomNote[i]] -= 1
             else:
                 return False
-
-        print(colection)
         
         return True
+
+        #O(N)
+        #O(1)
