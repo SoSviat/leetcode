@@ -11,7 +11,7 @@ class Solution:
 
         def dfs(node):
             if node is None:
-                return 
+                return False
             
             diff = k - node.val
 
@@ -20,12 +20,12 @@ class Solution:
 
             set_.add(node.val)
 
-            if dfs(node.left):
-                return True
+            # if dfs(node.left):
+            #     return True
 
-            if dfs(node.right):
-                return True
+            # if dfs(node.right):
+            #     return True
 
-            return False
+            return dfs(node.left) or dfs(node.right)
         return dfs(root)
         
