@@ -5,20 +5,31 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+    def isSymmetric(self, root: TreeNode | None) -> bool:
         
-        if not root:
-            return True
-        
-        left = root.left
-        right = root.right
-        return self.isMirror(left,right)
+        res = True
 
-    def isMirror(self, left, right):
-        if not left and not right: 
-            return True
-        
-        if not left or not right: 
-            return False
+        def dfs(left, right):
+            nonlocal res
 
-        return left.val == right.val and self.isMirror(left.left, right.right) and self.isMirror(left.right, right.left)
+            if not left and not right:
+                #res = True
+                return True
+            if not left and right or not right and left:
+                res = False
+                return False
+
+            if(left.val == right.val):
+                dfs(left.left, right.right)
+                dfs(left.right, right.left)
+
+                if left.val != right.val:
+                    res = False
+                    return res
+            else:
+                res = False
+                return False
+
+            return res
+
+        return dfs(root.left, root.right)
